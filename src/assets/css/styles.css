@@ -320,8 +320,8 @@ textarea{
 
 .article-item .image-wrap{
 
-    width: 130px;
-    height: 130px;
+    width: 180px;
+    height: 140px;
     overflow: hidden;
     float: left;
     margin-right: 15px;
@@ -372,8 +372,8 @@ textarea{
 .article-detail .image-wrap{
 
     float: none;
-    width: 100%;
-    height: 300px;
+    width: 70%;
+    height: 340px;
 }
 
 .article-detail .image-wrap img{

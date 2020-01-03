@@ -6,13 +6,11 @@
                 <img src="assets/images/default.png" *ngIf="!article.image">
             </div>
 
-            <h1 class="subheader">{{article.title}}</h1>
+            <h1 class="subheader">{{article.name}}</h1>
             <span class="date">
                 {{article.date | amLocale: 'es' | amTimeAgo }}
             </span>
-            <p>
-                {{article.content}}
-            </p>
+            <span> Precio: <strong>{{article.price}}$DOP</strong></span>
 
             <a [routerLink]="['/productos/editar', article._id]" class="btn btn-warning">Editar</a>
             <a (click)="delete(article._id)" class="btn btn-danger">Borrar</a>

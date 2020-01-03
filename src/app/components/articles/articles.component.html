@@ -13,10 +13,11 @@
             <img src="assets/images/default.png"  *ngIf= "!article.image">
         </div>
 
-        <h2>{{article.title}}</h2>
+        <h2>{{article.name}}</h2>
+        <span> Precio: <strong>{{article.price}}$DOP</strong></span>
         <span class="date">
             {{article.date | amLocale: 'es' | amTimeAgo }}
-        </span>
+        </span>    
         <a [routerLink]= "['/productos/articulo', article._id]">Leer mas</a>
 
         <div class="clearfix"></div>
