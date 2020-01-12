@@ -17,8 +17,9 @@
         <span> Precio: <strong>{{article.price}}$DOP</strong></span>
         <span class="date">
             {{article.date | amLocale: 'es' | amTimeAgo }}
-        </span>    
-        <a [routerLink]= "['/productos/articulo', article._id]">Ver producto</a>
+        </span>
+        <div class="clearfix"></div>    
+        <a class="btn btn-success" [routerLink]= "['/productos/articulo', article._id]">Ver producto</a>
 
         <div class="clearfix"></div>
     </article>

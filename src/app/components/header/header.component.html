@@ -15,8 +15,13 @@
                     <a [routerLink]= "['/productos']" [routerLinkActive]="['active']">Productos</a>
                 </li>
                 <li>
-                    <a [routerLink]= "['/login']" [routerLinkActive]="['active']">Login</a>
-                </li>
+                    <div *ngIf="!currentUser">
+                        <a [routerLink]= "['/login']" [routerLinkActive]="['active']">Login</a>
+                    </div>
+                    <div *ngIf="currentUser">
+                        <a class="nav-item nav-link" (click)="logout()">Logout</a>
+                    </div>                    
+                </li>            
             </ul>
         </nav>
     <div class="clearfix"></div>

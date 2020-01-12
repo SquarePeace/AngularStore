@@ -2,9 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { routing, appRoutingProviders } from "./app.routing";
 import { FormsModule } from "@angular/forms";
-import { HttpClientModule } from "@angular/common/http";
 import { MomentModule } from "angular2-moment";
 import { AngularFileUploaderModule } from "angular-file-uploader";
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -21,6 +22,9 @@ import { ArticleNewComponent } from './components/article-new/article-new.compon
 import { ArticleEditComponent } from './components/article-edit/article-edit.component';
 import { ProductsComponent } from './components/products/products.component';
 import { LoginComponent } from './components/login/login.component';
+import { fakeBackendProvider } from './_helpers';
+import { JwtInterceptor, ErrorInterceptor } from './_helpers';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,9 +49,13 @@ import { LoginComponent } from './components/login/login.component';
     FormsModule,
     HttpClientModule,
     MomentModule,
-    AngularFileUploaderModule
+    AngularFileUploaderModule,
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
-  providers: [appRoutingProviders],
+  providers: [appRoutingProviders, { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+        { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+	fakeBackendProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

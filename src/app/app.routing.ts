@@ -11,6 +11,7 @@ import { SearchComponent } from "./components/search/search.component";
 import { ArticleNewComponent } from "./components/article-new/article-new.component";
 import { ArticleEditComponent } from "./components/article-edit/article-edit.component";
 import { LoginComponent } from "./components/login/login.component";
+import { AuthGuard } from './_helpers';
 //array de mis rutas...
 const appRoutes: Routes = [
     {path: '', component: HomeComponent},
