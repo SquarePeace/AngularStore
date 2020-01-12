@@ -4,6 +4,8 @@ import { Article } from "../../models/article";
 import { Router, ActivatedRoute, Params } from "@angular/router";
 import { Global } from "../../services/global";
 import swal from "sweetalert";
+import { AuthenticationService } from '../../services/authentication.service';
+import { User } from '../../models/user';
 
 @Component({
   selector: 'app-article',
@@ -12,15 +14,17 @@ import swal from "sweetalert";
   providers: [ArticleService]
 })
 export class ArticleComponent implements OnInit {
-
+  currentUser: User;
   public article: Article;
   public url: string;
   constructor(
     private _articleService: ArticleService,
     private _route: ActivatedRoute,
-    private _router: Router
+    private _router: Router,
+    private authenticationService: AuthenticationService
   ) {
     this.url = Global.url;
+    this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
    }
 
   ngOnInit() {

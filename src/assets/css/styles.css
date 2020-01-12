@@ -211,6 +211,8 @@ body{
 .btn-success{
 
     background:rgb(23, 150, 19);
+    color: white !important;
+    text-decoration: none;
 }
 
 .btn-warning{
@@ -489,5 +491,10 @@ textarea{
     #slider .slider-small h1{
 
         padding-top: 35px;
-    }    
+    }
+    
+    div .article-item .image-wrap{
+        max-height: 180px;
+    }
+
 }
