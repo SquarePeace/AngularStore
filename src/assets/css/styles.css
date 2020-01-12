@@ -496,5 +496,7 @@ textarea{
     div .article-item .image-wrap{
         max-height: 180px;
     }
-
+    #content{
+        min-height: 419px;
+    }
 }
