@@ -499,4 +499,10 @@ textarea{
     #content{
         min-height: 419px;
     }
+
+    .article-item{
+
+        text-align: -webkit-center;
+    }
+
 }
