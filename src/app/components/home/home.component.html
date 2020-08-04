@@ -1,10 +1,22 @@
-<div class="center">
-    <section id="content">
+<div class="container">
 
-        <h2 class="subheader">{{title}}</h2>
-        <app-articles
-            [articles] = "articles"
-        ></app-articles>
-    </section>
-    <app-sidebar></app-sidebar>
+    <div class="row">
+
+        <div class="col-lg-3">
+            <app-sidebar></app-sidebar>
+        </div>
+
+        <div class="col-lg-9">
+
+            <div class="row">
+
+                <app-articles [articles]="articles"> -->
+                </app-articles>
+
+            </div>
+        </div>
+
+
+    </div>
+
 </div>

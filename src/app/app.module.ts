@@ -20,7 +20,6 @@ import { ArticleComponent } from './components/article/article.component';
 import { SearchComponent } from './components/search/search.component';
 import { ArticleNewComponent } from './components/article-new/article-new.component';
 import { ArticleEditComponent } from './components/article-edit/article-edit.component';
-import { ProductsComponent } from './components/products/products.component';
 import { LoginComponent } from './components/login/login.component';
 import { fakeBackendProvider } from './_helpers';
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
@@ -40,7 +39,6 @@ import { JwtInterceptor, ErrorInterceptor } from './_helpers';
     SearchComponent,
     ArticleNewComponent,
     ArticleEditComponent,
-    ProductsComponent,
     LoginComponent,
   ],
   imports: [
