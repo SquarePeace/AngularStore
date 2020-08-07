@@ -1,10 +1,10 @@
-  <aside id="sidebar">
-        <div id="nav-blog" class="sidebar-item" *ngIf="currentUser">
+  <aside class="list-group">
+        <div id="nav-blog" class="list-group-item" *ngIf="currentUser">
             <h3>Puedes hacer esto</h3>
             <a [routerLink]="['/productos/crear']" class="btn btn-success">Crear Producto</a>
         </div>
     
-        <div id="search" class="sidebar-item">
+        <div id="search" class="list-group-item">
             <h1 class="my-4">Buscador</h1>
             <h5>encuentra el Producto que buscas</h5>
             <form #searchForm="ngForm" (ngSubmit)="goSearch()">
@@ -13,3 +13,4 @@
             </form>
         </div>
     </aside>
+<br>

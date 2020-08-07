@@ -1,4 +1,4 @@
-﻿<div class="center">
+﻿<!-- <div class="center">
     <section id="content">
         <h1 class="subheader">Iniciar sesión</h1>
            
@@ -27,5 +27,31 @@
             <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
         </form>
     </section>
+</div> -->
+<div class="container-sm">
+
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="email">Email:</label>
+      <div class="col-sm-3">
+        <input type="email" class="form-control" id="email" placeholder="Enter email">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="pwd">Password:</label>
+      <div class="col-sm-3">
+        <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-3">
+        <button type="submit" class="btn btn-success">Entrar</button>
+      </div>
+    </div>
+  </form>
+
 </div>
-<div class="clearfix"></div>
+
+  
+
+
