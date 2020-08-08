@@ -14,7 +14,6 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { ErrorComponent } from './components/error/error.component';
-import { EsParPipe } from './pipes/espar.pipe';
 import { ArticlesComponent } from './components/articles/articles.component';
 import { ArticleComponent } from './components/article/article.component';
 import { SearchComponent } from './components/search/search.component';
@@ -33,7 +32,6 @@ import { JwtInterceptor, ErrorInterceptor } from './_helpers';
     FooterComponent,
     HomeComponent,
     ErrorComponent,
-    EsParPipe,
     ArticlesComponent,
     ArticleComponent,
     SearchComponent,

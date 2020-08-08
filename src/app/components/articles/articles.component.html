@@ -1,84 +1,28 @@
-<!-- <div class="loading" *ngIf="!articles">
-    Cargando...
+<div class="jumbotron" *ngIf="!articles">
+    <h1> Cargando...</h1>
 </div>
 
-<div class="loading" *ngIf="articles && articles.length == 0">
-    <h3>No hay articulos para mostrar, intentalo mas tarde :)</h3>
+<div class="jumbotron" *ngIf="articles && articles.length == 0">
+    <h1>Ups...</h1>
+    <p>No hay articulos para mostrar, intentalo mas tarde ;)</p>
 </div>
 
 <div id="articles" *ngIf="articles">
-    <article class="article-item" *ngFor= "let article of articles">
-        <div class="image-wrap">
-            <img src="{{url + 'get-image/' + article.image}}"  *ngIf= "article.image">
-            <img src="assets/images/default.png"  *ngIf= "!article.image">
-        </div>
-
-        <h2>{{article.name}}</h2>
-        <span> Precio: <strong>{{article.price}}$DOP</strong></span>
-        <span class="date">
-            {{article.date | amLocale: 'es' | amTimeAgo }}
-        </span>
-        <div class="clearfix"></div>    
-        <a class="btn btn-success" [routerLink]= "['/productos/articulo', article._id]">Ver producto</a>
-
-        <div class="clearfix"></div>
-    </article>
-
-</div> -->
-    
-
-<div class="row">
-
-    <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card h-100" >
-            <img class="card-img-top" src="assets/images/default.png" alt="Card image">
-            <div class="card-body">
-                <h4 class="card-title">Playstation 3</h4>
-                <span> Precio: <strong>5000$DOP</strong></span>
-                <p class="card-text">Hace Dos semanas</p>
-                <a class="btn btn-success mx-auto">Ver producto</a>
+    <div class="row">
+        <div *ngFor="let article of articles">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <img class="card-img-top" src="{{url + 'get-image/' + article.image}}" *ngIf="article.image">
+                    <img class="card-img-top" src="assets/images/default.png" *ngIf="!article.image">
+                    <div class="card-body">
+                        <h4 class="card-title">{{article.name}}</h4>
+                        <span> Precio: <strong>{{article.price}}$DOP</strong></span>
+                        <p class="card-text">{{article.date | amLocale: 'es' | amTimeAgo }}</p>
+                        <a class="btn btn-success mx-auto" [routerLink]="['/productos/articulo', article._id]">Ver
+                            producto</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-            
-    <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card h-100" >
-            <img class="card-img-top" src="assets/images/default.png" alt="Card image">
-            <div class="card-body">
-                <h4 class="card-title">Playstation 3</h4>
-                <span> Precio: <strong>5000$DOP</strong></span>
-                <p class="card-text">Hace Dos semanas</p>
-                <a class="btn btn-success mx-auto">Ver producto</a>
-            </div>
-        </div>
-    </div>
-    
-    <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card h-100" >
-            <img class="card-img-top" src="assets/images/default.png" alt="Card image">
-            <div class="card-body">
-                <h4 class="card-title">Playstation 3</h4>
-                <span> Precio: <strong>5000$DOP</strong></span>
-                <p class="card-text">Hace Dos semanas</p>
-                <a class="btn btn-success mx-auto">Ver producto</a>
-            </div>
-        </div>
-    </div>
-    
-    <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card h-100" >
-            <img class="card-img-top" src="assets/images/default.png" alt="Card image">
-            <div class="card-body">
-                <h4 class="card-title">Playstation 3</h4>
-                <span> Precio: <strong>5000$DOP</strong></span>
-                <p class="card-text">Hace Dos semanas</p>
-                <a class="btn btn-success mx-auto">Ver producto</a>
-            </div>
-        </div>
-    </div>
-
 </div>
-
-
-    
-    
