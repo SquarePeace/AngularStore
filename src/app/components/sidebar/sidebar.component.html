@@ -1,16 +1,19 @@
-<aside id="sidebar">
-    <div id="nav-blog" class="sidebar-item" *ngIf="currentUser">
-        <h3>Puedes hacer esto</h3>
-        <a [routerLink]="['/productos/crear']" class="btn btn-success">Crear Producto</a>
-    </div>
+<aside class="list-group">
+    
 
-    <div id="search" class="sidebar-item">
-        <h3>Buscador</h3>
-        <p>encuentra el Producto que buscas</p>
+    <div id="search" class="list-group-item">
+        <h1 class="my-4">Buscador</h1>
+        <h5>encuentra el Producto que buscas</h5>
         <form #searchForm="ngForm" (ngSubmit)="goSearch()">
-            <input type="text" name="search" [(ngModel)]="searchString" />
-            <input type="submit" name="submit" value="Buscar" class="btn"/>
+            <div class="form-group">
+                <input type="text" class="form-control" name="search" [(ngModel)]="searchString" />
+            </div>
+            <input type="submit" name="submit" value="Buscar" class="btn btn-success" />
         </form>
+        <br>
+        <div *ngIf="currentUser">
+            <a [routerLink]="['/productos/crear']" class="btn btn-success">Crear Producto</a>
+        </div>
     </div>
 </aside>
-<div class="clearfix"></div>
+<br>
