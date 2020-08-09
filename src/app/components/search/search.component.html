@@ -1,12 +1,16 @@
-<div class="center">
-    <section id="content">
-        <h1 class="subheader">Productos Encontrados</h1>
+<div class="container">
+    <div class="row">
 
-        <app-articles
-        [articles] = "articles"
-        ></app-articles>
+        <div class="col-lg-3">
+            <app-sidebar></app-sidebar>
+        </div>
 
-    </section>
+        
 
-    <app-sidebar></app-sidebar>
+        <div class="col-lg-9">
+            <h1>Productos Encontrados</h1>
+            <app-articles [articles]="articles">
+            </app-articles>
+        </div>
+    </div>  
 </div>

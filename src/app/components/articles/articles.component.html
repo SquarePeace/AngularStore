@@ -7,10 +7,9 @@
     <p>No hay articulos para mostrar, intentalo mas tarde ;)</p>
 </div>
 
-<div id="articles" *ngIf="articles">
-    <div class="row">
+<div *ngIf="articles">
         <div *ngFor="let article of articles">
-            <div class="col-lg-4 col-md-6 mb-4">
+            <div class="col-lg-6 col-md-6 mb-4">
                 <div class="card h-100">
                     <img class="card-img-top" src="{{url + 'get-image/' + article.image}}" *ngIf="article.image">
                     <img class="card-img-top" src="assets/images/default.png" *ngIf="!article.image">
@@ -24,5 +23,4 @@
                 </div>
             </div>
         </div>
-    </div>
 </div>

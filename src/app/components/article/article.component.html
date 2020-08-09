@@ -1,28 +1,22 @@
-<div class="center">
-    <section id="content" *ngIf="article">
-        <article class="article-item article-detail">
-            <div class="image-wrap">
-                <img src="{{url + 'get-image/' + article.image}}" *ngIf="article.image">
-                <img src="../../../assets/images/default.png" *ngIf="!article.image">
+<div>
+    <div *ngIf="article">
+        
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+                <img class="card-img-top" src="{{url + 'get-image/' + article.image}}" *ngIf="article.image">
+                <img class="card-img-top" src="assets/images/default.png" *ngIf="!article.image">
+                <div class="card-body">
+                    <h4 class="card-title">{{article.name}}</h4>
+                    <span> Precio: <strong>{{article.price}}$DOP</strong></span>
+                    <p class="card-text">{{article.date | amLocale: 'es' | amTimeAgo }}</p>
+                    <a class="btn btn-success" target="_blank" href="https://api.whatsapp.com/send?phone=+18096941137">Contactar con el vendedor</a>
+                <div *ngIf="currentUser"> 
+                    <a [routerLink]="['/productos/editar', article._id]" class="btn btn-warning">Editar</a>
+                    <a (click)="delete(article._id)" class="btn btn-danger">Borrar</a>
+                </div>
+                </div>
             </div>
+        </div>
 
-            <h1 class="subheader">{{article.name}}</h1>
-
-            <span> PRECIO: <strong>{{article.price}}$DOP</strong></span>
-            <span class="date">
-                {{article.date | amLocale: 'es' | amTimeAgo }}
-            </span>
-            
-            <a class="btn btn-success" target="_blank" href="https://api.whatsapp.com/send?phone=+18096941137">Contactar con el vendedor</a>
-            <div *ngIf="currentUser"> 
-                <a [routerLink]="['/productos/editar', article._id]" class="btn btn-warning">Editar</a>
-                <a (click)="delete(article._id)" class="btn btn-danger">Borrar</a>
-            </div>
-            
-            
-        </article>
-
-    </section>
-
-    <app-sidebar></app-sidebar>
+    </div>
 </div>
