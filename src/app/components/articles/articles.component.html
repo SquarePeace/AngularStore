@@ -7,12 +7,12 @@
     <p>No hay articulos para mostrar, intentalo mas tarde ;)</p>
 </div>
 
-<div *ngIf="articles">
-        <div *ngFor="let article of articles">
-            <div class="col-lg-6 col-md-6 mb-4">
+<div *ngIf="articles" class="row">
+        <div *ngFor="let article of articles" class="col-lg-4 col-md-6 mb-4">
+            <div>
                 <div class="card h-100">
-                    <img class="card-img-top" src="{{url + 'get-image/' + article.image}}" *ngIf="article.image">
-                    <img class="card-img-top" src="assets/images/default.png" *ngIf="!article.image">
+                    <img class="card-img-top" src="{{url + 'get-image/' + article.image}}" *ngIf="article.image" height="250">
+                    <img class="card-img-top" src="assets/images/default.png" *ngIf="!article.image" height="250">
                     <div class="card-body">
                         <h4 class="card-title">{{article.name}}</h4>
                         <span> Precio: <strong>{{article.price}}$DOP</strong></span>
