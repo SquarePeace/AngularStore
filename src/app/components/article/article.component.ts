@@ -3,7 +3,6 @@ import { ArticleService } from "../../services/article.service";
 import { Article } from "../../models/article";
 import { Router, ActivatedRoute, Params } from "@angular/router";
 import { Global } from "../../services/global";
-import swal from "sweetalert";
 import { AuthenticationService } from '../../services/authentication.service';
 import { User } from '../../models/user';
 
@@ -49,19 +48,11 @@ export class ArticleComponent implements OnInit {
 
   delete(id){
 
-    swal({
-      title: "Estas seguro?",
-      text: "Una vez borrado, se eliminara para siempre!",
-      icon: "warning",
-      buttons: [true, true],
-      dangerMode: true})
-    .then((willDelete) => {
+    
+    (willDelete) => {
       if (willDelete) {
         this._articleService.delete(id).subscribe(
-          Response =>{
-            swal("El articulo ha sido Borrado!!!", {
-              icon: "success",
-            });
+          Response =>{         
             this._router.navigate(['/home']);
           },
           error =>{
@@ -69,14 +60,7 @@ export class ArticleComponent implements OnInit {
             this._router.navigate(['/home']);
           }
         );
-        
-      } else {
-        swal("Traquilo, nada se ha borrado");
-      }
-    });
-
-
-    
+    };  
   }
-
+ }
 }
