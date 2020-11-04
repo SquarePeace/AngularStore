@@ -4,7 +4,6 @@ import { Routes, RouterModule } from "@angular/router";
 
 //importar los componentes que quiero que sean una pagina exclusiva
 import { HomeComponent } from "./components/home/home.component";
-import { ProductsComponent } from "./components/products/products.component";
 import { ArticleComponent } from "./components/article/article.component";
 import { ErrorComponent } from "./components/error/error.component";
 import { SearchComponent } from "./components/search/search.component";
@@ -16,7 +15,6 @@ import { AuthGuard } from './_helpers';
 const appRoutes: Routes = [
     {path: '', component: HomeComponent},
     {path: 'home', component: HomeComponent},
-    {path: 'productos', component: ProductsComponent},
     {path: 'productos/articulo/:id', component: ArticleComponent},
     {path: 'productos/crear', component: ArticleNewComponent},
     {path: 'productos/editar/:id', component: ArticleEditComponent},

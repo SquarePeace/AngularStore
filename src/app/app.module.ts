@@ -14,13 +14,11 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { ErrorComponent } from './components/error/error.component';
-import { EsParPipe } from './pipes/espar.pipe';
 import { ArticlesComponent } from './components/articles/articles.component';
 import { ArticleComponent } from './components/article/article.component';
 import { SearchComponent } from './components/search/search.component';
 import { ArticleNewComponent } from './components/article-new/article-new.component';
 import { ArticleEditComponent } from './components/article-edit/article-edit.component';
-import { ProductsComponent } from './components/products/products.component';
 import { LoginComponent } from './components/login/login.component';
 import { fakeBackendProvider } from './_helpers';
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
@@ -34,13 +32,11 @@ import { JwtInterceptor, ErrorInterceptor } from './_helpers';
     FooterComponent,
     HomeComponent,
     ErrorComponent,
-    EsParPipe,
     ArticlesComponent,
     ArticleComponent,
     SearchComponent,
     ArticleNewComponent,
     ArticleEditComponent,
-    ProductsComponent,
     LoginComponent,
   ],
   imports: [
